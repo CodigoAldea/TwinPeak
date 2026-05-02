@@ -10,11 +10,16 @@
         background-size: cover;
         background-position: center;
     }
-</style>
+    @media (max-width: 767px) {
+        body {
+            background-image: none;
+        }
+    }
+    </style>
 {% endblock extra_style %}
 {% block page %}
 <div class="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 m-0">
-    {% comment %} <h1 class="display-1">TwinPeaks</h1> {% endcomment %}
-    <h3 class="text-center text-white mt-5 fs-2" style="text-shadow: 10px 10px 6px rgba(0, 0, 0, 0.93);">We design and build systems that solve complex problems—combining structured thinking, emerging technologies, and a grounded understanding of real-world execution.</h3>
+    <h1 class="display-1 d-block d-md-none fw-bold">TwinPeaks</h1>
+    <h3 class="text-center mt-5 fs-2 d-block d-md-none" >We design and build systems that solve complex problems—combining structured thinking, emerging technologies, and a grounded understanding of real-world execution.</h3>
 </div>
 {% endblock page %}
