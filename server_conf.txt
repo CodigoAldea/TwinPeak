@@ -1,0 +1,17 @@
+server{
+
+        listen 80;
+        server_name 40.192.36.159;
+
+        location /static/ {
+        alias /home/ubuntu/Twineak/webapp/static/;
+        }
+        
+        location / {
+
+                include proxy_params;
+                proxy_pass http://unix:/home/ubuntu/Twineak/webapp/app.sock;
+
+        }
+
+}
