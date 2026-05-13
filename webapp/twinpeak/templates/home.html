@@ -4,22 +4,31 @@
 {% block title %}Home{% endblock title %}
 {% block extra_style %}
     <style>
-    body {
+    .hero {
         {% comment %} background-image: url('{% static "twinpeaks_grayscale_hd_new.jpg" %}'); {% endcomment %}
         background-image: url('/static/twinpeaks_grayscale_hd_new.jpg');
         background-size: cover;
         background-position: center;
+        width: 100vw;          /* stretch beyond container width */
+        max-width: 100vw;     /* prevent container limit */
+        margin-left: calc(50% - 50vw);  /* cancel out container left padding */
+        margin-right: calc(50% - 50vw); /* cancel out container right padding */
+        height: 100vh;        /* full viewport height */
+        position: relative;
     }
     @media (max-width: 767px) {
-        body {
+        .hero {
             background-image: none;
         }
     }
     </style>
 {% endblock extra_style %}
 {% block page %}
+<div class="contain-fluid vh-100 hero d-none d-md-block">
+
+</div>
 <div class="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 m-0">
-    <h1 class="display-1 d-block d-md-none fw-bold">TwinPeaks</h1>
-    <h3 class="text-center mt-5 fs-2 d-block d-md-none" >We design and build systems that solve complex problems—combining structured thinking, emerging technologies, and a grounded understanding of real-world execution.</h3>
+    <h1 class="display-1 d-block fw-bold">TwinPeaks</h1>
+    <h3 class="text-center mt-5 fs-2 d-block" >We design and build systems that solve complex problems—combining structured thinking, emerging technologies, and a grounded understanding of real-world execution.</h3>
 </div>
 {% endblock page %}
